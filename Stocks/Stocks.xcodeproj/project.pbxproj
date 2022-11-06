@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751255FC291860C600EF9D9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751255FB291860C600EF9D9A /* Extensions.swift */; };
 		75AB2C862916E43700EA8CE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB2C852916E43700EA8CE1 /* AppDelegate.swift */; };
 		75AB2C882916E43700EA8CE1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB2C872916E43700EA8CE1 /* SceneDelegate.swift */; };
 		75AB2C8A2916E43700EA8CE1 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AB2C892916E43700EA8CE1 /* WatchListViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751255FB291860C600EF9D9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		75AB2C822916E43700EA8CE1 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75AB2C852916E43700EA8CE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75AB2C872916E43700EA8CE1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				75AB2C8E2916E43A00EA8CE1 /* Assets.xcassets */,
 				75AB2C852916E43700EA8CE1 /* AppDelegate.swift */,
 				75AB2C872916E43700EA8CE1 /* SceneDelegate.swift */,
+				751255FB291860C600EF9D9A /* Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				75AB2C8A2916E43700EA8CE1 /* WatchListViewController.swift in Sources */,
 				75AB2C9F2916E84800EA8CE1 /* TopStoriesNewsViewController.swift in Sources */,
 				75AB2CA72917216A00EA8CE1 /* PersistenceManager.swift in Sources */,
+				751255FC291860C600EF9D9A /* Extensions.swift in Sources */,
 				75AB2CA52917214000EA8CE1 /* APICaller.swift in Sources */,
 				75AB2C862916E43700EA8CE1 /* AppDelegate.swift in Sources */,
 				75AB2C882916E43700EA8CE1 /* SceneDelegate.swift in Sources */,
