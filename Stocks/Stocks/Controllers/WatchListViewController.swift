@@ -43,6 +43,7 @@ class WatchListViewController: UIViewController {
   
   private func setUpSearchController() {
     let resultVC = SearchResultsViewController()
+    resultVC.delegate = self
     let searchVC = UISearchController(searchResultsController: resultVC)
     searchVC.searchResultsUpdater = self
     navigationItem.searchController = searchVC
@@ -62,9 +63,15 @@ extension WatchListViewController: UISearchResultsUpdating {
     // Call API to search
     
     // Update results controller
+    resultsVC.update(with: ["GOOG"])
     
     
-    print(query)
+//    print(query)
   }
 }
 
+extension WatchListViewController: SearchResultsViewControllerDelegate {
+  func searchResultsViewControllerDidSelect(searchResult: String) {
+    // Present stock details for given selection
+  }
+}
