@@ -7,7 +7,7 @@
 
 import UIKit
 
-// deleted controller. not used.
+// deleted controller. not used. child controller.
 class PanelViewController: UIViewController {
   
   override func viewDidLoad() {
