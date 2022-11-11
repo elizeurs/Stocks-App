@@ -25,19 +25,22 @@ class NewsViewController: UIViewController {
   
   // MARK: - Properties
   
+  private var stories = [NewsStory]()
+  
 //  private var stories = [String]()
 //  private var stories = ["first"]
-  private var stories: [NewsStory] = [
-    NewsStory(category: "tech",
-              datetime: 123,
-              headline: "Some headline should go here!",
-              image: "",
-              related: "Related",
-              source: "CNBC",
-              summary: "",
-              url: ""
-             )
-  ]
+  // dummy news story
+//  private var stories: [NewsStory] = [
+//    NewsStory(category: "tech",
+//              datetime: 123,
+//              headline: "Some headline should go here!",
+//              image: "",
+//              related: "Related",
+//              source: "CNBC",
+//              summary: "",
+//              url: ""
+//             )
+//  ]
   
   private let type: Type
   
@@ -84,7 +87,18 @@ class NewsViewController: UIViewController {
   }
   
   private func fetchNews() {
-    
+    APICaller.shared.news(for: type) { [weak self] result in
+      switch result {
+      case .success(let stories):
+        // we always do UI work on the main thread.
+        DispatchQueue.main.async {
+          self?.stories = stories
+          self?.tableView.reloadData()
+        }
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
   
   private func open(url: URL) {
