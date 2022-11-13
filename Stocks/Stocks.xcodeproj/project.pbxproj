@@ -27,6 +27,7 @@
 		75C3B0D3291DD16A000D309C /* NewsStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C3B0D2291DD16A000D309C /* NewsStoryTableViewCell.swift */; };
 		75CFD878291ACF5F00E4006D /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFD877291ACF5F00E4006D /* PanelViewController.swift */; };
 		75CFD87B291B084800E4006D /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 75CFD87A291B084800E4006D /* FloatingPanel */; };
+		75FC7DB3292054A40044AF25 /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC7DB2292054A40044AF25 /* MarketDataResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		75AB2CA82917219B00EA8CE1 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		75C3B0D2291DD16A000D309C /* NewsStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryTableViewCell.swift; sourceTree = "<group>"; };
 		75CFD877291ACF5F00E4006D /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
+		75FC7DB2292054A40044AF25 /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				7531890A29198CA8000F96EA /* SearchResponse.swift */,
 				75835207291C62C300F7DD05 /* NewsStory.swift */,
+				75FC7DB2292054A40044AF25 /* MarketDataResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				75AB2C862916E43700EA8CE1 /* AppDelegate.swift in Sources */,
 				75AB2C882916E43700EA8CE1 /* SceneDelegate.swift in Sources */,
 				75CFD878291ACF5F00E4006D /* PanelViewController.swift in Sources */,
+				75FC7DB3292054A40044AF25 /* MarketDataResponse.swift in Sources */,
 				75AB2CA12916E87600EA8CE1 /* SearchResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

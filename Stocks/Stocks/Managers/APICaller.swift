@@ -82,12 +82,37 @@ final class APICaller {
     }
   }
   
+//https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=1&from=1631022248&to=1631627048&token=cdkip12ad3idmsqf0t5gcdkip12ad3idmsqf0t60
+  public func marketData(
+    for symbol: String,
+    numberOfDays: TimeInterval = 7,
+    completion: @escaping (Result<MarketDataResponse, Error>) -> Void
+  ) {
+    let today = Date().addingTimeInterval(-(Constants.day))
+    let prior = today.addingTimeInterval(-(Constants.day * numberOfDays))
+    request(
+      url: url(
+        for: .marketData,
+        queryParams: [
+          "symbol": symbol,
+          "resolution": "1",
+          "from": "\(Int(prior.timeIntervalSince1970))",
+          "to": "\(Int(today.timeIntervalSince1970))"
+        ]
+      ),
+      expecting: MarketDataResponse.self,
+      completion: completion
+    )
+  }
+  
   // MARK: - Private
   
   private enum Endpoint: String {
     case search
     case topStories = "news"
     case companyNews = "company-news"
+//    https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=1&from=1631022248&to=1631627048&token=cdkip12ad3idmsqf0t5gcdkip12ad3idmsqf0t60
+    case marketData = "stock/candle"
   }
   
   private enum APIError: Error {

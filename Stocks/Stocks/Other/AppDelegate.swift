@@ -41,15 +41,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {}
 
     private func debug() {
-//      APICaller.shared.news(for: .topStories) { result in
-      APICaller.shared.news(for: .company(symbol: "MSFT")) { result in
-        switch result {
-        case .success(let news):
-          print(news.count)
-        case .failure: break
-        }
-//        print(result)
-      }
+      
+//      APICaller.shared.marketData(for: "AAPL", numberOfDays: 1) { result in
+//        switch result {
+//        case .success(let data):
+//          let candleSticks = data.candleSticks
+//        case .failure(let error):
+//          print(error)
+//        }
+//      }
+      
+////      APICaller.shared.news(for: .topStories) { result in
+//      APICaller.shared.news(for: .company(symbol: "MSFT")) { result in
+//        switch result {
+//        case .success(let news):
+//          print(news.count)
+//        case .failure: break
+//        }
+////        print(result)
+//      }
     }
   }
 
