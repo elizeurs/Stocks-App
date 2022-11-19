@@ -18,7 +18,7 @@ class WatchListViewController: UIViewController {
   private var watchlistMap: [String: [CandleStick]] = [:]
   
   // ViewModels
-  private var viewModels: [String] = []
+  private var viewModels: [WatchListTableViewCell.ViewModel] = []
   
   private let tableView: UITableView = {
     let table = UITableView()
@@ -33,9 +33,10 @@ class WatchListViewController: UIViewController {
     //    view.backgroundColor = .systemRed
     view.backgroundColor = .systemBackground
     setUpSearchController()
+    setUpTableView()
     fetchWatchlistData()
     setUpFloatingPanel()
-    setUpTableView()
+    setUpTitleView()
     //    setUpChild()
   }
   
@@ -51,6 +52,7 @@ class WatchListViewController: UIViewController {
       group.enter()
       
       APICaller.shared.marketData(for: symbol) { [weak self] result in
+        // defer - Swift's defer keyword lets us set up some work to be performed when the current scope exits. For example, you might want to make sure that some temporary resources are cleaned up once a method exits, and defer will make sure that happens no matter how that exit happens.
         defer {
           group.leave()
         }
@@ -65,9 +67,56 @@ class WatchListViewController: UIViewController {
       }
     }
     group.notify(queue: .main) { [weak self] in
+      self?.createViewModels()
       self?.tableView.reloadData()
   }
 }
+  
+  private func createViewModels() {
+    var viewModels = [WatchListTableViewCell.ViewModel]()
+    
+    for(symbol, candleSticks) in watchlistMap {
+      let changePercentage = getChangePercentage(
+        symbol: symbol,
+        data: candleSticks
+      )
+      viewModels.append(
+        .init(
+          symbol: symbol,
+          companyName: UserDefaults.standard.string(forKey: symbol) ?? "Company",
+          price: getLatestClosingPrice(from: candleSticks),
+          changeColor: changePercentage < 0 ? .systemRed : .systemGreen,
+          changePercentage: .percentage(from: changePercentage)
+        )
+      )
+    }
+    
+//    print("\n\n\(viewModels)\n\n")
+    
+    self.viewModels = viewModels
+  }
+  
+  private func getChangePercentage(symbol: String, data: [CandleStick]) -> Double {
+    let latestDate = data[0].date
+    guard let latestClose = data.first?.close,
+            let priorClose = data.first(where: {
+              !Calendar.current.isDate($0.date, inSameDayAs: latestDate)
+    })?.close else {
+      return 0
+    }
+    
+    let diff = 1 - (priorClose/latestClose)
+//    print("\(symbol): \(diff)%")
+    return diff
+  }
+  
+  private func getLatestClosingPrice(from data: [CandleStick]) -> String {
+    guard let closingPrice = data.first?.close else {
+      return ""
+    }
+    
+    return .formatted(number: closingPrice)
+  }
   
   private func setUpTableView() {
     view.addSubviews(tableView)

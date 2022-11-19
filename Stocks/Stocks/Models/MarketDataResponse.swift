@@ -17,9 +17,9 @@ struct MarketDataResponse: Codable {
   
   enum CodingKeys: String, CodingKey {
     case open = "o"
+    case low = "l"
     case close = "c"
     case high = "h"
-    case low = "l"
     case status = "s"
     case timestamps = "t"
   }
@@ -39,7 +39,7 @@ struct MarketDataResponse: Codable {
       )
     }
     
-    let sortedData = result.sorted(by: { $0.date < $1.date })
+    let sortedData = result.sorted(by: { $0.date > $1.date })
 //    print(sortedData[0])
     return sortedData
   }
