@@ -48,16 +48,16 @@ final class PersistenceManager {
   
   private func setUpDefaults() {
     let map: [String: String] = [
-      "AAPL": "Apple Inc",
+      "AAPL": "Apple Inc.",
       "MSFT": "Microsoft Corporation",
-      "SNAP": "Snap Inc",
+      "SNAP": "Snap Inc.",
       "GOOG": "Alphabet",
       "AMZN": "Amazon.com, Inc.",
       "WORK": "Slac Tecnologies",
-      "FB": "Facebook Inc",
-      "NVDA": "Nvidia Inc",
+      "FB": "Facebook Inc.",
+      "NVDA": "Nvidia Inc.",
       "NKE": "Nike",
-      "PINS": "Pinterest Inc",
+      "PINS": "Pinterest Inc.",
     ]
     
     let symbols = map.keys.map { $0 }
