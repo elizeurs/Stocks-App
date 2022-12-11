@@ -105,14 +105,29 @@ final class APICaller {
     )
   }
   
+  public func financialMetrics(
+    for symbol: String,
+    completion: @escaping (Result<FinancialMetricsResponse, Error>) -> Void
+  ) {
+    request(
+      url: url(
+        for: .financials,
+        queryParams: ["symbol": symbol, "metric": "all"]
+                    ),
+      expecting: FinancialMetricsResponse.self,
+      completion: completion
+    )
+  }
+  
   // MARK: - Private
   
   private enum Endpoint: String {
     case search
     case topStories = "news"
     case companyNews = "company-news"
-//    https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=1&from=1631022248&to=1631627048&token=cdkip12ad3idmsqf0t5gcdkip12ad3idmsqf0t60
     case marketData = "stock/candle"
+    case financials = "stock/metric"
+//    https://finnhub.io/api/v1/stock/candle?symbol=AAPL&resolution=1&from=1631022248&to=1631627048&token=cdkip12ad3idmsqf0t5gcdkip12ad3idmsqf0t60
   }
   
   private enum APIError: Error {
