@@ -26,6 +26,8 @@ class StockDetailsViewController: UIViewController {
   
   private var stories: [NewsStory] = []
   
+  private var metrics: Metrics?
+  
   // MARK: - Init
   
   init(
@@ -106,6 +108,7 @@ class StockDetailsViewController: UIViewController {
       switch result {
       case .success(let response):
         let metrics = response.metric
+        self?.metrics = metrics
         print(metrics)
       case .failure(let error):
         print(error)
@@ -133,17 +136,30 @@ class StockDetailsViewController: UIViewController {
 
   private func renderChart() {
     // Chart VM | FinancialMetricViewModel(s)
-    let  headerView = StockDetailHeaderView(frame: CGRect(
-      x: 0,
-      y: 0,
-      width: view.width,
-      height: (view.width * 0.7) + 100
-    )
+    let  headerView = StockDetailHeaderView(
+      frame: CGRect(
+        x: 0,
+        y: 0,
+        width: view.width,
+        height: (view.width * 0.7) + 100
+      )
     )
     
-    headerView.backgroundColor = .link
+    //    headerView.backgroundColor = .link
+    
+    var viewModels = [MetricCollectionViewCell.ViewModel]()
+    if let metrics = metrics {
+      viewModels.append(.init(name: "52W High", value: "\(metrics.AnnualWeekHigh)"))
+      viewModels.append(.init(name: "52L High", value: "\(metrics.AnnualWeekLow)"))
+      viewModels.append(.init(name: "52W High", value: "\(metrics.AnnualWeekPriceReturnDaily)"))
+      viewModels.append(.init(name: "Beta", value: "\(metrics.beta)"))
+      viewModels.append(.init(name: "10D Vol.", value: "\(metrics.TenDayAverageTradingVolume)"))
+    }
     
     // Configure
+    headerView.configure(
+      chartViewModel: .init(data: [], showLegend: false, showAxis: false),
+      metricViewModels: viewModels)
     
     tableView.tableHeaderView = headerView
   }
