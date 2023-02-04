@@ -7,8 +7,12 @@
 
 import UIKit
 
+/// Tableview cell for search result
 class SearchResultTableViewCell: UITableViewCell {
-  static let identifier = "SearchResultTableViewCell"
+  /// Identifier for cell
+  static let identzifier = "SearchResultTableViewCell"
+  
+  // MARK: - Init
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)

@@ -10,8 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+  
+  /// Gets called when app launches
+  /// - Parameters:
+  ///   - application: App instance
+  ///   - launchOptions: Launch properties
+  /// - Returns: Boll for success of failure
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     // https://finnhub.io/api/v1/search?q=Apple&token=cdkip12ad3idmsqf0t5gcdkip12ad3idmsqf0t60
@@ -25,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //      }
 //    }
     
-    debug()
+//    debug()
     
     return true
   }

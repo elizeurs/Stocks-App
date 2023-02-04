@@ -7,19 +7,26 @@
 
 import UIKit
 
+/// Delegate for search results
 protocol SearchResultsViewControllerDelegate: AnyObject {
-//  func searchResultsViewControllerDidSelect(searchResult: String)
+  //  func searchResultsViewControllerDidSelect(searchResult: String)
+  /// Notify delegate of selection
+  /// - Parameter searchResult: Result that was picked
   func searchResultsViewControllerDidSelect(searchResult: SearchResult)
 }
 
+/// VC to show search results
 class SearchResultsViewController: UIViewController {
+  /// Delegate to get evnets
   weak var delegate: SearchResultsViewControllerDelegate?
   
-//  private var results: [String] = []
+  //  private var results: [String] = []
+  /// Collection of results
   private var results: [SearchResult] = []
 
   
   // anonymous closure pattern
+  /// Primary view
   private let tableView: UITableView = {
     let table = UITableView()
     // Register a cell
@@ -28,6 +35,8 @@ class SearchResultsViewController: UIViewController {
     return table
   }()
 
+  // MARK: - Lifecycle
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       view.backgroundColor = .systemBackground
@@ -39,19 +48,28 @@ class SearchResultsViewController: UIViewController {
     tableView.frame = view.bounds
   }
   
+  // MARK: - Private
+  
+  /// Set up our table view
   private func setUpTable() {
     view.addSubview(tableView)
     tableView.delegate = self
     tableView.dataSource = self
   }
   
-//  public func update(with results: [String]) {
+  // MARK: - Public
+  
+  //  public func update(with results: [String]) {
+  /// Update results on VC
+  /// - Parameter results: Collection of news results
   public func update(with results: [SearchResult]) {
     self.results = results
     tableView.isHidden = results.isEmpty
     tableView.reloadData()
   }
 }
+
+//MARK: - TableView
 
 extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

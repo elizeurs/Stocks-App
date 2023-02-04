@@ -8,11 +8,13 @@
 import Foundation
 
 // codable - allows your json, that you get back from the api call to be mapped to this object, so long as the keys match and the value types match what is in your structure.
+/// API response for search
 struct SearchResponse: Codable {
   let count: Int
   let result: [SearchResult]
 }
 
+/// A single search result
 struct SearchResult: Codable {
   let description: String
   let displaySymbol: String
