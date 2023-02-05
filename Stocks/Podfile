@@ -6,6 +6,9 @@ target 'Stocks' do
   use_frameworks!
 
   # Pods for Stocks
+  pod 'FloatingPanel'
+  pod 'SDWebImage'
   pod 'Charts'
 
 end
+

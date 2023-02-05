@@ -10,6 +10,7 @@
 		10E5A1C42E66B6B3039DDFA6 /* Pods_Stocks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88E547D1C9696919A633781 /* Pods_Stocks.framework */; };
 		751255FC291860C600EF9D9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751255FB291860C600EF9D9A /* Extensions.swift */; };
 		751255FE291880DE00EF9D9A /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751255FD291880DE00EF9D9A /* SearchResultTableViewCell.swift */; };
+		7512A5D5298F04EE00A24A11 /* StocksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7512A5D4298F04EE00A24A11 /* StocksTests.swift */; };
 		7531890B29198CA8000F96EA /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7531890A29198CA8000F96EA /* SearchResponse.swift */; };
 		753D7D78291EE2CC00889F1D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 753D7D77291EE2CC00889F1D /* SDWebImage */; };
 		75695C04294E89C8009BC935 /* MetricCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75695C03294E89C8009BC935 /* MetricCollectionViewCell.swift */; };
@@ -36,10 +37,22 @@
 		75FC7DB3292054A40044AF25 /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FC7DB2292054A40044AF25 /* MarketDataResponse.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7512A5D6298F04EE00A24A11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75AB2C7A2916E43700EA8CE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75AB2C812916E43700EA8CE1;
+			remoteInfo = Stocks;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		27BDFDADFC1D67E05022FC9E /* Pods-Stocks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stocks.release.xcconfig"; path = "Target Support Files/Pods-Stocks/Pods-Stocks.release.xcconfig"; sourceTree = "<group>"; };
 		751255FB291860C600EF9D9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		751255FD291880DE00EF9D9A /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		7512A5D2298F04EE00A24A11 /* StocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7512A5D4298F04EE00A24A11 /* StocksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTests.swift; sourceTree = "<group>"; };
 		7531890A29198CA8000F96EA /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		75695C03294E89C8009BC935 /* MetricCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCollectionViewCell.swift; sourceTree = "<group>"; };
 		75835205291BF63E00F7DD05 /* NewsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderView.swift; sourceTree = "<group>"; };
@@ -69,6 +82,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7512A5CF298F04EE00A24A11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75AB2C7F2916E43700EA8CE1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,10 +110,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7512A5D3298F04EE00A24A11 /* StocksTests */ = {
+			isa = PBXGroup;
+			children = (
+				7512A5D4298F04EE00A24A11 /* StocksTests.swift */,
+			);
+			path = StocksTests;
+			sourceTree = "<group>";
+		};
 		75AB2C792916E43700EA8CE1 = {
 			isa = PBXGroup;
 			children = (
 				75AB2C842916E43700EA8CE1 /* Stocks */,
+				7512A5D3298F04EE00A24A11 /* StocksTests */,
 				75AB2C832916E43700EA8CE1 /* Products */,
 				D2014E104EF5D368EA071616 /* Pods */,
 				7498EE0E41595976475E1162 /* Frameworks */,
@@ -104,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				75AB2C822916E43700EA8CE1 /* Stocks.app */,
+				7512A5D2298F04EE00A24A11 /* StocksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,13 +216,30 @@
 				919FDE3431C35FF3BFAC307A /* Pods-Stocks.debug.xcconfig */,
 				27BDFDADFC1D67E05022FC9E /* Pods-Stocks.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7512A5D1298F04EE00A24A11 /* StocksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7512A5DA298F04EF00A24A11 /* Build configuration list for PBXNativeTarget "StocksTests" */;
+			buildPhases = (
+				7512A5CE298F04EE00A24A11 /* Sources */,
+				7512A5CF298F04EE00A24A11 /* Frameworks */,
+				7512A5D0298F04EE00A24A11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7512A5D7298F04EE00A24A11 /* PBXTargetDependency */,
+			);
+			name = StocksTests;
+			productName = StocksTests;
+			productReference = 7512A5D2298F04EE00A24A11 /* StocksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		75AB2C812916E43700EA8CE1 /* Stocks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75AB2C962916E43A00EA8CE1 /* Build configuration list for PBXNativeTarget "Stocks" */;
@@ -223,9 +270,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					7512A5D1298F04EE00A24A11 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 75AB2C812916E43700EA8CE1;
+					};
 					75AB2C812916E43700EA8CE1 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -241,7 +292,7 @@
 			);
 			mainGroup = 75AB2C792916E43700EA8CE1;
 			packageReferences = (
-				75CFD879291B084800E4006D /* XCRemoteSwiftPackageReference "FloatingPanel#swift-package-manager" */,
+				75CFD879291B084800E4006D /* XCRemoteSwiftPackageReference "FloatingPanel" */,
 				753D7D76291EE2CC00889F1D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 75AB2C832916E43700EA8CE1 /* Products */;
@@ -249,11 +300,19 @@
 			projectRoot = "";
 			targets = (
 				75AB2C812916E43700EA8CE1 /* Stocks */,
+				7512A5D1298F04EE00A24A11 /* StocksTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7512A5D0298F04EE00A24A11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75AB2C802916E43700EA8CE1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,6 +367,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7512A5CE298F04EE00A24A11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7512A5D5298F04EE00A24A11 /* StocksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75AB2C7E2916E43700EA8CE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,6 +406,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7512A5D7298F04EE00A24A11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75AB2C812916E43700EA8CE1 /* Stocks */;
+			targetProxy = 7512A5D6298F04EE00A24A11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		75AB2C902916E43A00EA8CE1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -351,6 +426,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7512A5D8298F04EE00A24A11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VM55LWG8PP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elizeurs.StocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stocks.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stocks";
+			};
+			name = Debug;
+		};
+		7512A5D9298F04EE00A24A11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VM55LWG8PP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elizeurs.StocksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stocks.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Stocks";
+			};
+			name = Release;
+		};
 		75AB2C942916E43A00EA8CE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -532,6 +645,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7512A5DA298F04EF00A24A11 /* Build configuration list for PBXNativeTarget "StocksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7512A5D8298F04EE00A24A11 /* Debug */,
+				7512A5D9298F04EE00A24A11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		75AB2C7D2916E43700EA8CE1 /* Build configuration list for PBXProject "Stocks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -561,7 +683,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		75CFD879291B084800E4006D /* XCRemoteSwiftPackageReference "FloatingPanel#swift-package-manager" */ = {
+		75CFD879291B084800E4006D /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scenee/FloatingPanel#swift-package-manager";
 			requirement = {
@@ -579,7 +701,7 @@
 		};
 		75CFD87A291B084800E4006D /* FloatingPanel */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 75CFD879291B084800E4006D /* XCRemoteSwiftPackageReference "FloatingPanel#swift-package-manager" */;
+			package = 75CFD879291B084800E4006D /* XCRemoteSwiftPackageReference "FloatingPanel" */;
 			productName = FloatingPanel;
 		};
 /* End XCSwiftPackageProductDependency section */

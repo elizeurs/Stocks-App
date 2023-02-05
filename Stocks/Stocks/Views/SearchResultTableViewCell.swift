@@ -10,7 +10,7 @@ import UIKit
 /// Tableview cell for search result
 class SearchResultTableViewCell: UITableViewCell {
   /// Identifier for cell
-  static let identzifier = "SearchResultTableViewCell"
+  static let identifier = "SearchResultTableViewCell"
   
   // MARK: - Init
 
