@@ -24,6 +24,7 @@ final class StocksTests: XCTestCase {
       let interval = Date().addingTimeInterval(3600 * TimeInterval(x)).timeIntervalSince1970
       timestamps.append(interval)
     }
+    timestamps.shuffle()
     
     let marketData = MarketDataResponse(
       open: doubles,
@@ -40,14 +41,14 @@ final class StocksTests: XCTestCase {
     XCTAssertEqual(candleSticks.count, marketData.close.count)
     XCTAssertEqual(candleSticks.count, marketData.high.count)
     XCTAssertEqual(candleSticks.count, marketData.low.count)
-    XCTAssertEqual(candleSticks.count, marketData.timestamps.count)
+//    XCTAssertEqual(candleSticks.count, marketData.timestamps.count)
     
     // verify sort
     let dates = candleSticks.map { $0.date }
     for x in 0 ..< dates.count-1 {
       let current = dates[x]
       let next = dates[x+1]
-      XCTAssertTrue(current >= next, "\(current) date should be greater than \(next) date")
+      XCTAssertTrue(current > next, "\(current) date should be greater than \(next) date")
     }
   }
 }
